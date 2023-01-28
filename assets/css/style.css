@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #e3f2fd;
+}
+
+.wrapper {
+    width: 700px;
+    background-color: #141414;
+    padding: 35px 40px;
+    border-radius: 20px;
+}
+
+header {
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h2 {
+    font-size: 1.9rem;
+}
+
+header .colum {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+
+header .colum span {
+    font-size: 1.19rem;
+    font-weight: 500;
+}
+
+
+header .colum.show-key input {
+    appearance: none;
+    width: 60px;
+    height: 30px;
+    background-color: #c3c2c2;
+    border-radius: 30px;
+    position: relative;
+}
+
+
+header .colum.show-key input::before {
+    position: absolute;
+    content: "";
+    width: 25px;
+    height: 25px;
+    background-color: #ffffff;
+    border-radius: 100%;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    transition: all .3s ease;
+}
+
+header .colum.show-key input:checked:before {
+    left: 32px;
+    background-color: #2569e7;
+
+}
+
+.piano-keys {
+    display: flex;
+    margin-top: 20px;
+}
+
+.piano-keys .key {
+    display: flex;
+    justify-content: center;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.piano-keys .white:active {
+    background: linear-gradient(rgba(193, 190, 190, 0.446) 96%, rgba(211, 210, 210, 0.298) 4%);
+
+}
+
+.piano-keys .black {
+    width: 40px;
+    height: 140px;
+    background: linear-gradient(#333, #000);
+    margin: 0px -22px 0px -22px;
+    z-index: 2;
+    border-radius: 0 0 5px 5px;
+    position: relative;
+
+
+
+}
+
+.piano-keys .white {
+    width: 70px;
+    height: 240px;
+    background: linear-gradient(#fff 96%, #eee 4%);
+    border-radius: 5px;
+    position: relative;
+
+
+}
+
+.piano-keys .key span {
+    position: absolute;
+    bottom: 18px;
+}
+
+
+
+.piano-keys .key {
+    list-style: none;
+    color: #a2a2a2;
+}
