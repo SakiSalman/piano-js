@@ -15,13 +15,14 @@ body {
     align-items: center;
     height: 100vh;
     background-color: #e3f2fd;
+    padding: 10px;
 }
 
 .wrapper {
-    width: 700px;
     background-color: #141414;
     padding: 35px 40px;
     border-radius: 20px;
+    padding: 50px;
 }
 
 header {
@@ -89,8 +90,9 @@ header .colum.show-key input:checked:before {
     cursor: pointer;
 }
 
-.piano-keys .white:active {
-    background: linear-gradient(rgba(193, 190, 190, 0.446) 96%, rgba(211, 210, 210, 0.298) 4%);
+.piano-keys .white.active {
+    background: linear-gradient(to bottom, #fff 0%, #eee 100%);
+    box-shadow: inset -5px 5px 20px rgba(0, 0, 0, .2);
 
 }
 
@@ -107,14 +109,25 @@ header .colum.show-key input:checked:before {
 
 }
 
+.piano-keys .black.active {
+    background: linear-gradient(to bottom, #000, #434343);
+    box-shadow: inset -5px 5px 20px rgba(0, 0, 0, .2);
+
+}
+
 .piano-keys .white {
     width: 70px;
     height: 240px;
     background: linear-gradient(#fff 96%, #eee 4%);
     border-radius: 5px;
     position: relative;
+    border: 1px solid #000;
 
 
+}
+
+.piano-keys .key.hide span {
+    display: none;
 }
 
 .piano-keys .key span {
@@ -127,4 +140,63 @@ header .colum.show-key input:checked:before {
 .piano-keys .key {
     list-style: none;
     color: #a2a2a2;
+}
+
+@media only screen and (max-width: 815px) {
+
+    .wrapper {
+        padding: 40px;
+    }
+
+    header {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    header :where(h2, .colum) {
+        margin-bottom: 20px;
+    }
+
+    .colum input {
+        max-width: 100px;
+
+    }
+
+    .piano-keys {
+        margin-top: 20px;
+    }
+
+    .piano-keys.key:where(:nth-child(9), :nth-child(10)) {
+        display: none;
+    }
+
+    .piano-keys .black {
+        height: 100px;
+        width: 40px;
+        margin: 0px -20px 0 -20px;
+    }
+
+    .piano-keys .white {
+        height: 180px;
+        width: 60px;
+    }
+
+}
+
+
+@media only screen and (max-width: 615px) {
+
+    .piano-keys .key:nth-child(13),
+    .piano-keys .key:nth-child(14),
+    .piano-keys .key:nth-child(15),
+    .piano-keys .key:nth-child(16),
+    .piano-keys .key:nth-child(17) {
+
+        display: none;
+    }
+
+    .piano-keys .white {
+        width: 50px;
+    }
+
 }
